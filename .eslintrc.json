@@ -1,5 +1,5 @@
 {
-  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "plugins": ["@typescript-eslint", "tailwindcss", "import", "prettier"],
   "extends": [
     "next/core-web-vitals",
     "airbnb",

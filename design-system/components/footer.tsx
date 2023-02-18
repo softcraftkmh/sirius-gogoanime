@@ -2,9 +2,9 @@ import InnerContainer from '@/design-system/base/innerContainer'
 
 function Footer() {
   return (
-    <footer>
+    <footer className="mt-8 pt-4 border-t">
       <InnerContainer>
-        <p>
+        <p className="text-center">
           © {new Date().getFullYear()} Kraft - This application was developed
           for the Sirius take-home assignment, submitted by{' '}
           <a
