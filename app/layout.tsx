@@ -1,7 +1,22 @@
-import './globals.css'
+import { Lora, Raleway } from '@next/font/google'
+
+import clsx from 'clsx'
 
 import Footer from '@/design-system/components/footer'
 import Header from '@/design-system/components/header'
+
+import './globals.css'
+
+const raleway = Raleway({
+  variable: '--font-raleway',
+  display: 'swap',
+  subsets: ['latin'],
+})
+const lora = Lora({
+  variable: '--font-lora',
+  display: 'swap',
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
@@ -9,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={clsx(raleway.variable, lora.variable)}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head

@@ -1,20 +1,26 @@
+import Link from 'next/link'
+
 import InnerContainer from '@/design-system/base/innerContainer'
 
 function Header() {
   return (
-    <header className="h-12 bg-slate-600">
-      <InnerContainer className="">
-        <h1 className="inline-block">シリウス</h1>
+    <header>
+      <InnerContainer className="h-12 flex items-center">
+        <Link href="/">
+          <h1 className="inline-block font-serif font-bold text-primary">
+            シリウス
+          </h1>
+        </Link>
         <nav className="flex ml-auto">
           <ul className="flex">
             <li className="ml-2">
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li className="ml-2">
-              <a href="/about">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li className="ml-2">
-              <a href="/contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
