@@ -7,9 +7,13 @@ function Footer() {
         <p>
           © {new Date().getFullYear()} Kraft - This application was developed
           for the Sirius take-home assignment, submitted by{' '}
-          <a href="https://kaungmyat.vercel.app/" className="underline">
+          <a
+            href="https://kaungmyat.vercel.app/"
+            className="underline text-secondary"
+          >
             Kraft
           </a>
+          .
         </p>
       </InnerContainer>
     </footer>
