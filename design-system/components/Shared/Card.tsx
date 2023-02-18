@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Anime } from '@/services/types'
+import type { Anime } from '@/services/types'
 
 type CardProps = Omit<Anime, 'releasedDate' | 'animeUrl'>
 
