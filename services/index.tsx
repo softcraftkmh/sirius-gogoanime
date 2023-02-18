@@ -1,7 +1,8 @@
 import type { Anime } from '@/services/types'
+import type { AnimeFilter } from '@/types'
 
-export async function getAnimes() {
-  const response = await fetch('https://gogoanime.consumet.stream/popular')
+export async function getAnimes(filter?: AnimeFilter) {
+  const response = await fetch(`https://gogoanime.consumet.stream/${filter}`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }

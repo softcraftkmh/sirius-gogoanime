@@ -1,24 +1,24 @@
-import InnerContainer from '@/design-system/base/innerContainer'
-import Card from '@/design-system/components/Shared/Card'
-import { getAnimes } from '@/services'
+import HomeActions from '@/modules/Home/actions'
+import HomeCards from '@/modules/Home/cards'
+import type { AnimeFilter } from '@/types'
 
-async function Home() {
-  const data = await getAnimes()
+type HomePageProps = {
+  searchParams: {
+    filter?: AnimeFilter
+  }
+}
 
+function HomePage(params: HomePageProps) {
+  const {
+    searchParams: { filter = 'recent-release' },
+  } = params
   return (
     <section>
-      <InnerContainer className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-12">
-        {data.map((anime) => (
-          <Card
-            key={anime.animeId}
-            animeId={anime.animeId}
-            animeTitle={anime.animeTitle}
-            animeImg={anime.animeImg}
-          />
-        ))}
-      </InnerContainer>
+      <HomeActions />
+      {/* @ts-expect-error Server Component */}
+      <HomeCards filter={filter} />
     </section>
   )
 }
 
-export default Home
+export default HomePage

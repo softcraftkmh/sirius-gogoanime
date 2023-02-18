@@ -5,6 +5,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './design-system/**/*.{js,ts,jsx,tsx}',
+    './modules/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     colors: {
