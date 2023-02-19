@@ -5,18 +5,19 @@ import type { AnimeFilter } from '@/types'
 type HomePageProps = {
   searchParams: {
     filter?: AnimeFilter
+    search?: string
   }
 }
 
 function HomePage(params: HomePageProps) {
   const {
-    searchParams: { filter = 'recent-release' },
+    searchParams: { filter, search },
   } = params
   return (
     <section>
       <HomeActions />
       {/* @ts-expect-error Server Component */}
-      <HomeCards filter={filter} />
+      <HomeCards filter={filter} search={search} />
     </section>
   )
 }
