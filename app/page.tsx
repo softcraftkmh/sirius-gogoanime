@@ -15,7 +15,6 @@ async function HomePage(params: HomePageProps) {
     searchParams: { filter, search },
   } = params
   const data = await getAnimes(filter, search)
-  console.log('craf1er` ~ file: page.tsx:18 ~ HomePage ~ data', data)
 
   return (
     <section>
