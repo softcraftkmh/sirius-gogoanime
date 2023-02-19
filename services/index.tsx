@@ -3,7 +3,7 @@ import type { AnimeFilter } from '@/types'
 
 export async function getAnimes(filter?: AnimeFilter, search?: string) {
   const subdirectory =
-    filter || search ? `search?keyw=${search}` : undefined || 'recent-release'
+    filter || (search ? `search?keyw=${search}` : undefined) || 'recent-release'
   const response = await fetch(
     `https://gogoanime.consumet.stream/${subdirectory}`
   )

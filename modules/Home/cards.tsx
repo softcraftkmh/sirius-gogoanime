@@ -19,7 +19,7 @@ const CHUNK_SIZE = 16
 
 function HomeCards(props: HomeCardsProps) {
   const { animes, search, filter } = props
-  const defaultFilter = !filter && !search ? 'recent-release' : undefined
+  const defaultFilter = !filter && !search ? 'recent-release' : filter
   const [currentPage, setCurrentPage] = useState(1)
   const chunkedAnimes = chunk(animes, CHUNK_SIZE)
 
@@ -27,11 +27,11 @@ function HomeCards(props: HomeCardsProps) {
     <InnerContainer>
       <h1 className="capitalize text-xl font-bold my-4">
         {defaultFilter
-          ? defaultFilter.replace(/-/g, ' ')
+          ? `${defaultFilter.replace(/-/g, ' ')} Animes`
           : `Search results for "${search}"`}
       </h1>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-12">
-        {chunkedAnimes[currentPage - 1].map((anime) => (
+      <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-12">
+        {(chunkedAnimes[currentPage - 1] || []).map((anime) => (
           <Card
             key={anime.animeId}
             animeId={anime.animeId}

@@ -51,7 +51,10 @@ function HomeAnimeSearch() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid grid-cols-[1fr,auto] gap-2">
+    <form
+      onSubmit={onSubmit}
+      className="grid grid-cols-[1fr,auto] gap-2 mt-auto"
+    >
       <AsyncSelect
         inputValue={value}
         onInputChange={(v, a) => {
