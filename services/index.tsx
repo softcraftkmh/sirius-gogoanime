@@ -2,9 +2,8 @@ import type { Anime, AnimeDetails } from '@/services/types'
 import type { AnimeFilter } from '@/types'
 
 export async function getAnimes(filter?: AnimeFilter, search?: string) {
-  console.log('craf1er` ~ file: index.tsx:5 ~ getAnimes ~ filter', filter)
-  console.log('craf1er` ~ file: index.tsx:5 ~ getAnimes ~ search', search)
-  const subdirectory = filter || `search?keyw=${search}`
+  const subdirectory =
+    filter || search ? `search?keyw=${search}` : undefined || 'recent-release'
   const response = await fetch(
     `https://gogoanime.consumet.stream/${subdirectory}`
   )

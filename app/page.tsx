@@ -1,5 +1,6 @@
 import HomeActions from '@/modules/home/actions'
 import HomeCards from '@/modules/home/cards'
+import { getAnimes } from '@/services'
 import type { AnimeFilter } from '@/types'
 
 type HomePageProps = {
@@ -9,15 +10,16 @@ type HomePageProps = {
   }
 }
 
-function HomePage(params: HomePageProps) {
+async function HomePage(params: HomePageProps) {
   const {
     searchParams: { filter, search },
   } = params
+  const data = await getAnimes(filter, search)
+
   return (
     <section>
       <HomeActions />
-      {/* @ts-expect-error Server Component */}
-      <HomeCards filter={filter} search={search} />
+      <HomeCards filter={filter} search={search} animes={data} />
     </section>
   )
 }
