@@ -1,5 +1,5 @@
 import InnerContainer from '@/design-system/base/innerContainer'
-import Card from '@/design-system/components/Shared/Card'
+import Card from '@/design-system/components/shared/card'
 import { getAnimes } from '@/services'
 import type { AnimeFilter } from '@/types'
 

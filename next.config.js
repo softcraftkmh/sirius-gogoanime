@@ -18,6 +18,18 @@ const nextConfig = {
         port: '',
         pathname: '/images/anime/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'gogocdn.net',
+        port: '',
+        pathname: '/images/upload/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'gogocdn.net',
+        port: '',
+        pathname: '/images/**',
+      },
     ],
   },
 }

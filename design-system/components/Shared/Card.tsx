@@ -9,12 +9,12 @@ function Card(props: CardProps) {
   const { animeId, animeTitle, animeImg } = props
   return (
     <div className="flex flex-col hover:scale-105 transition-all duration-300 hover:text-primary">
-      <Link href={`/anime/${animeId}`}>
+      <Link href={`/animes/${animeId}`}>
         <div className="relative h-72 w-full">
           <Image
-            className="rounded shadow-md"
+            className="rounded-md shadow-md"
             src={animeImg}
-            alt="alt"
+            alt={animeTitle}
             fill
             style={{
               objectFit: 'cover',

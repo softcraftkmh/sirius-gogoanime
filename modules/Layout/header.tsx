@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import InnerContainer from '@/design-system/base/innerContainer'
-import Nav from '@/modules/Layout/nav'
+import Nav from '@/modules/layout/nav'
 
 function Header() {
   return (

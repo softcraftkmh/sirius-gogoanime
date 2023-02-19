@@ -1,5 +1,5 @@
-import HomeActions from '@/modules/Home/actions'
-import HomeCards from '@/modules/Home/cards'
+import HomeActions from '@/modules/home/actions'
+import HomeCards from '@/modules/home/cards'
 import type { AnimeFilter } from '@/types'
 
 type HomePageProps = {

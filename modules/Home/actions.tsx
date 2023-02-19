@@ -1,16 +1,12 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-
 import InnerContainer from '@/design-system/base/innerContainer'
+import HomeAnimeSearch from '@/modules/home/search'
 
 function HomeActions() {
-  const router = useRouter()
   return (
     <InnerContainer>
-      <button type="button" onClick={() => router.push('/?filter=popular')}>
-        popular
-      </button>
+      <HomeAnimeSearch />
     </InnerContainer>
   )
 }

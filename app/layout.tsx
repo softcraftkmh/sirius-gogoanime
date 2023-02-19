@@ -1,8 +1,8 @@
 import { Lora, Raleway } from '@next/font/google'
 import clsx from 'clsx'
 
-import Footer from '@/modules/Layout/footer'
-import Header from '@/modules/Layout/header'
+import Footer from '@/modules/layout/footer'
+import Header from '@/modules/layout/header'
 
 import './globals.css'
 

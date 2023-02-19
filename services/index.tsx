@@ -1,4 +1,4 @@
-import type { Anime } from '@/services/types'
+import type { Anime, AnimeDetails } from '@/services/types'
 import type { AnimeFilter } from '@/types'
 
 export async function getAnimes(filter?: AnimeFilter) {
@@ -10,9 +10,12 @@ export async function getAnimes(filter?: AnimeFilter) {
 }
 
 export async function getAnime(id: string) {
-  const response = await fetch(`https://kitsu.io/api/edge/anime/${id}`)
+  console.log(`https://gogoanime.consumet.stream/anime-details/${id}`)
+  const response = await fetch(
+    `https://gogoanime.consumet.stream/anime-details/${id}`
+  )
   if (!response.ok) {
     throw new Error(response.statusText)
   }
-  return response.json()
+  return response.json() as Promise<AnimeDetails>
 }
