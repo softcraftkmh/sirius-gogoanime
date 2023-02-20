@@ -17,7 +17,7 @@ async function AnimeDetailsPage(props: AnimeDetailsPageProps) {
   return (
     <section>
       <AnimeDetailsActions />
-      <AnimeDetailsInformation {...data} />
+      {data && <AnimeDetailsInformation {...data} />}
     </section>
   )
 }

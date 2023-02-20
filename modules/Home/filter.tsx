@@ -16,7 +16,7 @@ const selectOptions = FILTERS.map((filter) => ({
 
 function HomeAnimeFilter() {
   const router = useRouter()
-  const filterParam = useSearchParams().get('filter') || 'recent-release'
+  const filterParam = useSearchParams()?.get('filter') || 'recent-release'
 
   return (
     <div>

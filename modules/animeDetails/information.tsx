@@ -1,3 +1,4 @@
+import isEmpty from 'lodash/isEmpty'
 import Image from 'next/image'
 
 import InnerContainer from '@/design-system/base/innerContainer'
@@ -37,7 +38,7 @@ function AnimeDetailsInformation(props: AnimeDetails) {
         <span>Plot:</span>
         <p>{synopsis}</p>
         <span>Genre:</span>
-        <p>{genres.reduce((p, c) => `${p}, ${c}`)}</p>
+        <p>{!isEmpty(genres) && genres.reduce((p, c) => `${p}, ${c}`)}</p>
         <span>Released:</span>
         <p>{releasedDate}</p>
         <span>Status:</span>
