@@ -1,38 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sirius Gogoanime
 
-## Getting Started
+Sirius Gogoanime is a website built using React 18 with Next.js 13 beta. It provides a platform to search and filter anime lists, view anime details, and more.
 
-First, run the development server:
+## Code Styling
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The code follows the principles of clean code and DRY. The eslint is based upon the air-bnb style guide, with additional linter rules added. Type is preferred over interface, and union type is preferred over enum.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Run the Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+PNPM is used for efficiency. To install the packages, run `pnpm i`. To start the development, run `pnpm dev`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Folders
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- `app` contains server components and layouts.
+  - `pages` contains server pages.
+- `design-system` contains UI building elements and blocks.
+  - `base` contains base UI elements.
+  - `components` composes based on base design elements for complex components.
+- `modules` contains home modules and anime details modules.
+- `services` contains API calls.
+- `types` contains types that are used in the project.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Architecture
 
-## Learn More
+The website is modules based, with data fetching mainly done in the server to improve performance. React server components are used to reduce bundle size and loading time. Caching for API calls is done in the server.
 
-To learn more about Next.js, take a look at the following resources:
+## CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tailwind is used as the CSS framework for its simplicity and ease of use. Tailwind animation is also used, and grid is mainly used for the layouts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Test Cases
 
-## Deploy on Vercel
+Test cases are added for the base design components, with more to be added later.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scalability of the Code-base
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Modules are used for the scalability of the code base. The design system is separated to be highly reusable. React server components, caching, and deduping are used to reduce the server workload and increase performance.
+
+## State Management
+
+Only local state management is used, with global state management to be used as required. Rematch js will be used for its simplicity.
+
+## Features
+
+The website currently provides the following features:
+
+- Anime lists (search, filter)
+- Anime details
+- OG tags are added for social media friendly (needs to be improved for the anime details)
+
+## Feature Roadmap
+
+The following features are planned for future development:
+
+- SEO improvement
+- Dark theme
+- Anime schedule
+- Choose Anilist GraphQL API
+- Push notifications
+
+## Contributing
+
+If you'd like to contribute, please fork the repository and create a pull request. Please ensure that your code passes the existing tests and that new features or changes include tests as well.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
